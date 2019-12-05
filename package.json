@@ -1,14 +1,31 @@
 {
   "name": "line-sticker-clipboard-web",
   "version": "0.1.0",
-  "private": true,
+  "author": "Ze-Hao Wang <salmon.zh.tw@gmail.com> (https://salmon.tw/)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wazho/line-sticker-clipboard-web.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wazho/line-sticker-clipboard-web/issues"
+  },
+  "license": "MIT",
+  "keywords": [
+    "line",
+    "sticker"
+  ],
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "@types/styled-components": "^4.4.0",
+    "antd": "^3.26.0",
+    "clipboard-copy": "^3.1.0",
+    "query-string": "^6.9.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-scripts": "3.3.0"
+    "react-scripts": "3.3.0",
+    "styled-components": "^4.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
