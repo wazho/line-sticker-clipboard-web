@@ -1,10 +1,12 @@
-// Local modules.
+// Node modules.
 import React, { useState, useEffect, useCallback } from 'react';
 import { stringify } from 'query-string';
-import copyToClipboard from 'clipboard-copy';
+// import copyToClipboard from 'clipboard-copy';
 // Styles.
 import { Modal, Avatar, Row, Col, notification, Divider, Button } from 'antd';
 import styled from 'styled-components';
+// Local modules.
+import { imageToBlob } from './utils/image';
 
 const apiUrl = `https://asia-east2-line-sticker-fetcher.cloudfunctions.net`;
 
@@ -19,9 +21,12 @@ function SticketPicker(props) {
         setVisible(false);
     }, []);
 
-    const handleCopy = useCallback((imageUrl) => {
-        const text = `![](${imageUrl} =100x)`;
-        copyToClipboard(text);
+    const handleCopy = useCallback(async (imageUrl) => {
+        // const text = `![](${imageUrl} =100x)`;
+        // copyToClipboard(text);
+        const blob = await imageToBlob(imageUrl)
+        const item = new window.ClipboardItem({ 'image/png': blob });
+        navigator.clipboard.write([item]);
 
         notification.success({
             message: `複製成功`,
